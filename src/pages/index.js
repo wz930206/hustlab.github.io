@@ -30,13 +30,13 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo title="互联网实习秋招避坑手册" />
+      <Seo title="互联网实习秋招参考手册" />
       <div className="flex flex-col items-start md:items-center md:flex-row">
         <div className="md:mr-4 h-28 w-28 text-7xl flex md:justify-center items-center justify-start">
           📜
         </div>
         <h1 className="text-2xl font-extrabold text-black md:text-5xl dark:text-white">
-          互联网实习秋招避坑手册
+          互联网实习秋招参考手册
         </h1>
       </div>
       <div className="mt-6 flex gap-4 items-center">
@@ -59,7 +59,7 @@ const IndexPage = () => {
             href="https://github.com/HUSTLab/hustlab.github.io"
             className="text-yellow-700 transition hover:text-yellow-600 underline dark:text-blue-400  dark:hover:text-blue-300"
           >
-            互联网实习秋招避坑手册
+            互联网实习秋招参考手册
           </a>{' '}
           最初由华科 19
           级软硕同学发起，通过分发问卷，调研了已实习同学的实习经历。主要收集房租、上下班时间、加班情况、公司福利、团队氛围、所做业务、是否受政策影响等等几个方面的信息，帮助其他同学应对接下来的秋招，也给即将实习的同学做一份参考。你也可以{' '}

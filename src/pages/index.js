@@ -71,6 +71,16 @@ const IndexPage = () => {
           </a>{' '}
           参与贡献。
         </p>
+        <p className="border-l-4 border-gray-200 py-2 my-3 px-3 text-gray-500">
+          2021-10-13 整合{' '}
+          <a
+            className="text-yellow-700 transition hover:text-yellow-600 dark:text-blue-400  dark:hover:text-blue-300"
+            href="https://github.com/WorkerLivesMatter/WorkingTime"
+          >
+            WorkerLivesMatter
+          </a>{' '}
+          数据
+        </p>
       </div>
       <div className="flex w-full mt-4 flex-col items-center gap-4 sm:flex-row">
         {selectPageData.map((item, index) => (
@@ -79,11 +89,11 @@ const IndexPage = () => {
             onChange={(e) => {
               handleFilter(e, item.type);
             }}
-            defaultValue=""
+            defaultValue="placeholder"
             required
             className="select select-bordered w-full flex-1 text-base"
           >
-            <option value="" disabled="disabled">
+            <option value="placeholder" disabled="disabled">
               {item.name}
             </option>
             <option value="All">全部</option>
@@ -96,7 +106,7 @@ const IndexPage = () => {
         ))}
       </div>
       {filterData.map((item, index) => (
-        <div key={index} className="card shadow mt-6 w-full">
+        <div key={item.id} className="card shadow mt-6 w-full">
           <div className="card-body">
             <h2 className="card-title">
               {item.company}-{item.department}-{item.work}
@@ -105,11 +115,23 @@ const IndexPage = () => {
               <span className="badge mr-2">{item.company}</span>
               <span className="badge mr-2">{item.work}</span>
               <span className="badge mr-2">{item.city}</span>
+              {item.industry !== '' && (
+                <span className="badge mr-2">{item.industry}</span>
+              )}
             </div>
-            <p className="mb-3">{item.condition}</p>
-            <p className="text-gray-500 dark:text-gray-300">
-              数据更新于：{item.time}
+            <p className="mb-3">
+              上下班时间：{item.startWork}（上班），{item.endWork}（下班）
             </p>
+            <p className="mb-3">
+              用餐时间：{item.lunchTime}（午餐），{item.dinnerTime}（晚餐）
+            </p>
+            <p className="mb-3">
+              是否特殊工作日：{item.Wed}（周三），{item.Fri}（周五）
+            </p>
+            <p className="mb-3">
+              一周工作天数：{item.workDays}，日报/周报：{item.report}
+            </p>
+            <p className="mb-3">备注：{item.note}</p>
           </div>
         </div>
       ))}

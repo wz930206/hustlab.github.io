@@ -8,12 +8,20 @@ const useAllCollections = () => {
         allCollectionJson {
           nodes {
             id
-            city
             company
-            condition
             department
             work
-            time
+            city
+            startWork
+            endWork
+            lunchTime
+            dinnerTime
+            Wed
+            Fri
+            workDays
+            report
+            note
+            industry
           }
         }
       }

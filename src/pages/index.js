@@ -131,7 +131,7 @@ const IndexPage = () => {
             <p className="mb-3">
               一周工作天数：{item.workDays}，日报/周报：{item.report}
             </p>
-            <p className="mb-3">备注：{item.note}</p>
+            <p className="mb-3">备注：{item.note || '无'}</p>
           </div>
         </div>
       ))}
